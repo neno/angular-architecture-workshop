@@ -1,0 +1,15 @@
+<nav>
+  <ul class="flex flex-wrap border-b border-gray-200">
+    <li class="mr-2">
+      <a [routerLink]="'search'" routerLinkActive="tabActive" class="tab">
+        Search Movies
+      </a>
+    </li>
+    <li class="mr-2">
+      <a [routerLink]="'favorites'" routerLinkActive="tabActive" class="tab">
+        Favorite Movies (0)
+      </a>
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>

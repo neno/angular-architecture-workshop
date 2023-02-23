@@ -1,3 +1,5 @@
+import { IMoviesState } from './large/store/reducers';
+
 export type IMovieItem = Pick<IMovie, 'Title' | 'Year' | 'imdbID' | 'Type' | 'Poster'>;
 
 export interface IMovie {
@@ -31,4 +33,8 @@ export interface IMovie {
   Production: string;
   Website: string;
   Response: string;
+}
+
+export interface IAppState {
+  movies: IMoviesState;
 }
