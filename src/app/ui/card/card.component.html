@@ -1,0 +1,17 @@
+<figure
+  class="w-full h-full flex flex-col items-center justify-between border"
+>
+  <div class="aspect-[1/1] w-full bg-gray-300">
+    <ng-container *ngIf="imgSrc">
+      <img
+        [src]="imgSrc"
+        [alt]="title"
+        class="aspect-[1/1] w-full object-cover"
+        (error)="imgFallback($event)"
+      />
+    </ng-container>
+  </div>
+  <figcaption class="flex-1 p-2 text-sm font-medium">
+    {{ title }}
+  </figcaption>
+</figure>

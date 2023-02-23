@@ -1,0 +1,77 @@
+<nav>
+  <ul class="flex flex-wrap border-b border-gray-200">
+    <ng-container *ngIf="activeTab$ | async as activeTab">
+      <li class="mr-2">
+        <button
+          (click)="activateTab('search')"
+          class="tab"
+          [ngClass]="{ tabActive: activeTab === 'search' }"
+        >
+          Search Movies
+        </button>
+      </li>
+      <li class="mr-2">
+        <button
+          (click)="activateTab('favorites')"
+          class="tab"
+          [ngClass]="{ tabActive: activeTab === 'favorites' }"
+        >
+          Favorite Movies ({{ favoritesCount$ | async }})
+        </button>
+      </li>
+    </ng-container>
+  </ul>
+</nav>
+<div class="grid grid-cols-12 gap-8">
+  <div class="col-span-8 flex flex-col gap-4">
+    <ng-container *ngIf="activeTab$ | async as activeTab">
+      <!-- BEGIN SEARCH TAB -->
+      <ng-container *ngIf="activeTab === 'search'">
+        <app-search-form (search)="onSearch($event)"></app-search-form>
+        <ng-container *ngIf="searchResults$ | async as results">
+          <ul class="grid grid-cols-3 xl:grid-cols-4 gap-8">
+            <li *ngFor="let movie of results" class="">
+              <button (click)="selectMovie(movie.imdbID)">
+                <app-card
+                  [imgSrc]="movie.Poster"
+                  [title]="movie.Title"
+                ></app-card>
+              </button>
+            </li>
+          </ul>
+        </ng-container>
+      </ng-container>
+      <!-- END SEARCH TAB -->
+      <!-- BEGIN FAVORITES TAB -->
+      <ng-container *ngIf="activeTab === 'favorites'">
+        <ng-container *ngIf="myFavoriteMovies$ | async as myFavoriteMovies">
+          <ul class="grid grid-cols-3 xl:grid-cols-4 gap-8">
+            <li *ngFor="let movie of myFavoriteMovies" class="">
+              <button (click)="selectMovie(movie.imdbID)">
+                <app-card
+                  [imgSrc]="movie.Poster"
+                  [title]="movie.Title"
+                ></app-card>
+              </button>
+            </li>
+          </ul>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+    <!-- END FAVORITES TAB -->
+  </div>
+  <div class="col-span-4">
+    <!-- BEGIN SELECTED MOVIE -->
+    <ng-container *ngIf="selectedMovie$ | async as selectedMovie">
+      <app-deflist [movie]="selectedMovie" (onAddMovie)="addMovie($event)">
+        <button
+          class="flex-0 w-full px-4 py-2 bg-primary text-white text-md"
+          (click)="addMovie(selectedMovie)"
+        >
+          ＋ Select Movie
+        </button>
+      </app-deflist>
+    </ng-container>
+    <!-- END SELECTED MOVIE -->
+  </div>
+</div>

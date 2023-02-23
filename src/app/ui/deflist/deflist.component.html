@@ -1,0 +1,43 @@
+<div class="flex flex-col gap-8">
+  <dl class="grid grid-cols-3">
+    <dt>Title</dt>
+    <dd class="col-span-2">{{ movie.Title }}</dd>
+    <dt>Year</dt>
+    <dd class="col-span-2">{{ movie.Year }}</dd>
+    <dt>Released</dt>
+    <dd class="col-span-2">{{ movie.Released }}</dd>
+    <dt>Runtime</dt>
+    <dd class="col-span-2">{{ movie.Runtime }}</dd>
+    <dt>Genre</dt>
+    <dd class="col-span-2">{{ movie.Genre }}</dd>
+    <dt>Director</dt>
+    <dd class="col-span-2">{{ movie.Director }}</dd>
+    <dt>Writer</dt>
+    <dd class="col-span-2">{{ movie.Writer }}</dd>
+    <dt>Actors</dt>
+    <dd class="col-span-2">{{ movie.Actors }}</dd>
+    <dt>Plot</dt>
+    <dd class="col-span-2">{{ movie.Plot }}</dd>
+    <dt>Language</dt>
+    <dd class="col-span-2">{{ movie.Language }}</dd>
+    <dt>Country</dt>
+    <dd class="col-span-2">{{ movie.Country }}</dd>
+    <dt>Awards</dt>
+    <dd class="col-span-2">{{ movie.Awards }}</dd>
+    <dt>imdbRating</dt>
+    <dd class="col-span-2">{{ movie.imdbRating }}</dd>
+    <dt>imdbVotes</dt>
+    <dd class="col-span-2">{{ movie.imdbVotes }}</dd>
+    <dt>imdbID</dt>
+    <dd class="col-span-2">{{ movie.imdbID }}</dd>
+    <dt>Type</dt>
+    <dd class="col-span-2">{{ movie.Type }}</dd>
+  </dl>
+  <ng-content></ng-content>
+  <!-- <button
+    class="flex-0 w-full px-4 py-2 bg-primary text-white text-md"
+    (click)="onAddMovie.emit(movie)"
+  >
+    ＋ Select Movie
+  </button> -->
+</div>

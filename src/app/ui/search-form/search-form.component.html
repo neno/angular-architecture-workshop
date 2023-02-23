@@ -1,0 +1,18 @@
+<form novalidate #f="ngForm" (ngSubmit)="onSearch()">
+  <ol class="w-full p-4 m-0 bg-gray-200 flex gap-4 items-center content">
+    <li class="flex-1">
+      <input
+        type="text"
+        placeholder="Search movies by title or year"
+        name="searchTerm"
+        [(ngModel)]="searchTerm"
+        class="p-2 flex w-full"
+      />
+    </li>
+    <li class="flex-0">
+      <app-button>
+        Search
+      </app-button>
+    </li>
+  </ol>
+</form>
