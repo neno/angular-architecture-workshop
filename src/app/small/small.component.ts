@@ -8,7 +8,6 @@ type TabType = 'search' | 'favorites';
 @Component({
   selector: 'app-small',
   templateUrl: './small.component.html',
-  styleUrls: ['./small.component.css']
 })
 export class SmallComponent {
   private favoriteMovies$ = new BehaviorSubject<IMovie[]>([]);
