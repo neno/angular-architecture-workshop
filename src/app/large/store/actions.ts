@@ -26,17 +26,32 @@ export const removeFromFavorites = createAction(
   props<{ movieId: string }>()
 );
 
-export const fetchMovieById = createAction(
+export const searchMovieById = createAction(
   '[Movies] Fetch Movie By Id',
   props<{ movieId: string }>()
 );
 
-export const fetchMovieByIdSuccess = createAction(
+export const searchMovieByIdSuccess = createAction(
   '[Movies] Fetch Movie By Id Success',
   props<{ movie: IMovie }>()
 );
 
-export const fetchMovieByIdFailure = createAction(
+export const searchMovieByIdFailure = createAction(
   '[Movies] Fetch Movie By Id Failure',
   props<{ error: 'Fetch movie by id failed' }>()
 );
+
+export const selectMovieById = createAction(
+  '[Movies] Select Movie By Id',
+  props<{ movieId: string }>()
+);
+
+// export const selectMovieByIdSuccess = createAction(
+//   '[Movies] Select Movie By Id Success',
+//   props<{ movie: IMovie }>()
+// );
+
+// export const selectMovieByIdFailure = createAction(
+//   '[Movies] Select Movie By Id Failure',
+//   props<{ error: 'Fetch movie by id failed' }>()
+// );

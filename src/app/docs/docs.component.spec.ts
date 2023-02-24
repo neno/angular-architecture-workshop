@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LargeDetailComponent } from './large-detail.component';
+import { DocsComponent } from './docs.component';
 
-describe('LargeDetailComponent', () => {
-  let component: LargeDetailComponent;
-  let fixture: ComponentFixture<LargeDetailComponent>;
+describe('DocsComponent', () => {
+  let component: DocsComponent;
+  let fixture: ComponentFixture<DocsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LargeDetailComponent ]
+      declarations: [ DocsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LargeDetailComponent);
+    fixture = TestBed.createComponent(DocsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

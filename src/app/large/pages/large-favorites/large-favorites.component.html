@@ -1,2 +1,19 @@
-<p>large-favorites works!</p>
-<router-outlet></router-outlet>
+<div class="grid grid-cols-12 gap-8">
+  <div class="col-span-8 flex flex-col gap-4">
+    <ng-container *ngIf="favorites$ | async as favorites">
+      <ul class="grid grid-cols-3 xl:grid-cols-4 gap-8">
+        <li *ngFor="let movie of favorites" class="">
+          <button (click)="selectMovie(movie.imdbID)">
+            <app-card
+              [imgSrc]="movie.Poster"
+              [title]="movie.Title"
+            ></app-card>
+          </button>
+        </li>
+      </ul>
+    </ng-container>
+  </div>
+  <div class="col-span-4">
+    <router-outlet></router-outlet>
+  </div>
+</div>

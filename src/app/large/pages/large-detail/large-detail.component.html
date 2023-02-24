@@ -1,1 +1,10 @@
-<p>large-detail works!</p>
+<ng-container *ngIf="movie$ | async as movie">
+  <app-deflist [movie]="movie">
+    <button
+      class="flex-0 w-full px-4 py-2 bg-primary text-white text-md"
+      (click)="addToFavorites(movie)"
+    >
+      ＋ Select Movie
+    </button>
+  </app-deflist>
+</ng-container>

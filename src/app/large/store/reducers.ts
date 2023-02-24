@@ -58,12 +58,12 @@ export const reducers = createReducer(
   ),
   on(
     MoviesActions.addToFavorites,
-    (state, { movie }) => (
-      {
-        ...state,
-        favorites: [...state.favorites, movie]
+    (state, { movie }) => {
+      if (state.favorites.find(favorite => favorite.imdbID === movie.imdbID)) {
+        return state;
       }
-    )
+      return {  ...state, favorites: [...state.favorites, movie] };
+    }
   ),
   on(
     MoviesActions.removeFromFavorites,
@@ -75,7 +75,7 @@ export const reducers = createReducer(
     )
   ),
   on(
-    MoviesActions.fetchMovieById,
+    MoviesActions.searchMovieById,
     (state, { movieId }) => (
       {
         ...state,
@@ -86,7 +86,7 @@ export const reducers = createReducer(
     )
   ),
   on(
-    MoviesActions.fetchMovieByIdSuccess,
+    MoviesActions.searchMovieByIdSuccess,
     (state, { movie }) => (
       {
         ...state,
@@ -97,7 +97,7 @@ export const reducers = createReducer(
     )
   ),
   on(
-    MoviesActions.fetchMovieByIdFailure,
+    MoviesActions.searchMovieByIdFailure,
     (state, { error }) => (
       {
         ...state,
@@ -105,5 +105,17 @@ export const reducers = createReducer(
         error
       }
     )
-  )
+  ),
+  on(
+    MoviesActions.selectMovieById,
+    (state, { movieId }) => (
+      {
+        ...state,
+        selectedMovie: state.favorites.find(movie => movie.imdbID === movieId) ?? null,
+        selectedMovieId: movieId,
+        isLoading: false,
+        error: null
+      }
+    )
+  ),
 );

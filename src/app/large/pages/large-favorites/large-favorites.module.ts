@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LargeFavoritesComponent } from './large-favorites.component';
 import { LargeFavoritesRoutingModule } from './large-favorites-routing.module';
+import { UiModule } from 'src/app/ui/ui.module';
 
 
 
@@ -11,7 +12,8 @@ import { LargeFavoritesRoutingModule } from './large-favorites-routing.module';
   ],
   imports: [
     CommonModule,
-    LargeFavoritesRoutingModule
+    LargeFavoritesRoutingModule,
+    UiModule
   ]
 })
 export class LargeFavoritesModule { }

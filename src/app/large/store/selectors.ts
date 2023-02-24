@@ -23,6 +23,11 @@ export const favoritesSelector = createSelector(
   (state) => state.favorites
 );
 
+export const favoritesCountSelector = createSelector(
+  favoritesSelector,
+  (favorites) => favorites.length
+);
+
 export const selectSelectedMovie = createSelector(
   selectMoviesState,
   (state) => state.selectedMovie
@@ -33,8 +38,11 @@ export const errorSelector = createSelector(
   (state) => state.error
 );
 
-
-
+export const isMovieFavorite = createSelector(
+  favoritesSelector,
+  selectSelectedMovie,
+  (favorites, selectedMovie) => selectedMovie && favorites.includes(selectedMovie)
+);
 
 
 // export const selectSearchTerm = (state: IMoviesState) => state.searchTerm;

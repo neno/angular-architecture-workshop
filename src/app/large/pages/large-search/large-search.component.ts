@@ -17,4 +17,8 @@ export class LargeSearchComponent {
   onSearch(searchTerm: string) {
     this.store.dispatch(MoviesActions.searchMovies({ searchTerm }));
   }
+
+  selectMovie(movieId: string) {
+    this.store.dispatch(MoviesActions.searchMovieById({ movieId }));
+  }
 }

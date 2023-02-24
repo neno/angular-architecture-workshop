@@ -5,7 +5,7 @@ import { LargeSearchComponent } from './large-search.component';
 const routes: Routes = [
   {
     path: '', component: LargeSearchComponent, children: [
-      { path: 'id', loadChildren: () => import('../large-detail/large-detail.module').then(m => m.LargeDetailModule) },
+      { path: ':id', loadChildren: () => import('../large-detail/large-detail.module').then(m => m.LargeDetailModule) },
     ]
   }
 ];
