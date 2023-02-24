@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: 'medium', loadChildren: () => import('./medium/medium.module').then(m => m.MediumModule) },
   { path: 'large', loadChildren: () => import('./large/large.module').then(m => m.LargeModule) },
   { path: 'docs', loadChildren: () => import('./docs/docs.module').then(m => m.DocsModule) },
+  { path: '', redirectTo: 'small', pathMatch: 'full' },
 ];
 
 @NgModule({

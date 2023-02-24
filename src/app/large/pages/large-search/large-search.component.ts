@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as MoviesActions from '../../store/actions';
 import { isLoadingSelector, searchResultsSelector } from '../../store/selectors';
@@ -6,6 +6,7 @@ import { isLoadingSelector, searchResultsSelector } from '../../store/selectors'
 @Component({
   selector: 'app-large-search',
   templateUrl: './large-search.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LargeSearchComponent {
 
