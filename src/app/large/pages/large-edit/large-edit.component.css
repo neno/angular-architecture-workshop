@@ -1,0 +1,11 @@
+.label {
+  @apply grid grid-cols-3 my-1;
+}
+
+.label-text {
+  @apply col-span-1 py-2 font-bold;
+}
+
+.label-field {
+  @apply col-span-2 p-2 border;
+}

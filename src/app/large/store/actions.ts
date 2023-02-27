@@ -46,12 +46,7 @@ export const selectMovieById = createAction(
   props<{ movieId: string }>()
 );
 
-// export const selectMovieByIdSuccess = createAction(
-//   '[Movies] Select Movie By Id Success',
-//   props<{ movie: IMovie }>()
-// );
-
-// export const selectMovieByIdFailure = createAction(
-//   '[Movies] Select Movie By Id Failure',
-//   props<{ error: 'Fetch movie by id failed' }>()
-// );
+export const updateMovie = createAction(
+  '[Movies] Update Movie',
+  props<{ movie: IMovie }>()
+);

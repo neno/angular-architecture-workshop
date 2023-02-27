@@ -17,4 +17,7 @@ export class LargeDetailComponent {
   addToFavorites(movie: IMovie) {
     this.store.dispatch(MoviesActions.addToFavorites({ movie }));
   }
+  removeFromFavorites(movieId: string) {
+    this.store.dispatch(MoviesActions.removeFromFavorites({ movieId }));
+  }
 }

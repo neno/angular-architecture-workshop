@@ -1,3 +1,6 @@
-<button class="px-4 py-2 bg-primary text-white text-md">
+<button
+  class="flex-0 flex items-center gap-2 px-4 py-2 bg-primary text-white text-md shadow"
+  [ngClass]="{'bg-primary': color === 'primary', 'bg-gray-200 text-black': color === 'secondary', 'bg-danger' : color === 'danger' }"
+>
   <ng-content></ng-content>
 </button>

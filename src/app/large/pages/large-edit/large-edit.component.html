@@ -1,0 +1,71 @@
+<div>
+  <form [formGroup]="form" novalidate>
+    <ol class="form-group">
+      <li class="form-item">
+        <label class="label">
+          <span class="label-text">Title:</span>
+          <input formControlName="Title" class="label-field" type="text" />
+        </label>
+      </li>
+      <li class="form-item">
+        <label class="label">
+          <span class="label-text">Year:</span>
+          <input formControlName="Year" class="label-field" type="string" />
+        </label>
+      </li>
+      <li class="form-item">
+        <label class="label">
+          <span class="label-text">Runtime:</span>
+          <input formControlName="Runtime" class="label-field" type="string" />
+        </label>
+      </li>
+      <li class="form-item">
+        <label class="label">
+          <span class="label-text">Genre:</span>
+          <input formControlName="Genre" class="label-field" type="string" />
+        </label>
+      </li>
+      <li class="form-item">
+        <label class="label">
+          <span class="label-text">Actors:</span>
+          <input formControlName="Actors" class="label-field" type="string" />
+        </label>
+      </li>
+      <li class="form-item">
+        <label class="label">
+          <span class="label-text">Plot:</span>
+          <textarea
+            formControlName="Plot"
+            class="label-field"
+            rows="4"
+            style="resize: none"
+          ></textarea>
+        </label>
+      </li>
+      <li class="form-item">
+        <label class="label">
+          <span class="label-text">Poster:</span>
+          <input formControlName="Poster" class="label-field" type="string" />
+        </label>
+      </li>
+      <li class="flex gap-4 justify-between mt-8 items-center">
+        <div class="flex items-center gap-4">
+          <app-button color="primary" type="submit" (click)="save()">
+            <app-icon name="heroArrowPath"></app-icon>
+            <span>Update</span>
+          </app-button>
+          <app-button color="secondary" (click)="cancel()">
+            <app-icon name="heroXCircle"></app-icon>
+            <span>Reset</span>
+          </app-button>
+        </div>
+        <app-button
+        color="danger"
+      >
+        <app-icon name="heroMinusCircle"></app-icon>
+        <span>Delete</span>
+      </app-button>
+      </li>
+    </ol>
+  </form>
+</div>

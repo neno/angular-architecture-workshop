@@ -118,4 +118,14 @@ export const reducers = createReducer(
       }
     )
   ),
+  on(
+    MoviesActions.updateMovie,
+    (state, { movie }) => (
+      {
+        ...state,
+        favorites: state.favorites.map(favorite => favorite.imdbID === movie.imdbID ? {...favorite, ...movie} : favorite),
+        selectedMovie: { ...state.selectedMovie, ...movie }
+      }
+    )
+  )
 );
