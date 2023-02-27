@@ -3,54 +3,42 @@
 </div>
 
 <section>
-  <h2>Real Life Analogy</h2>
-
-  <div class="content">
-    <img
-      src="assets/5ztp5hs0bcz7hw753ugh.png"
-      alt="Simple real life example"
-      class="inline-block center"
-    />
-  </div>
-
-  <ol>
-    <li>
-      <h4>Step 1</h4>
-      <p class="text-xl">
-        At the convenience of home, people can order food by calling restaurant
-        workers.
-      </p>
-    </li>
-    <li>
-      <h4>Step 2</h4>
-      <p class="text-xl">
-        Restaurant workers notes down your order and then hands it off to chef.
-        They also get groceries if needed for the order.
-      </p>
-    </li>
-    <li>
-      <h4>Step 3</h4>
-      <p>Chef cooks the orders and places them in the store display.</p>
-    </li>
-    <li>
-      <h4>Step 4</h4>
-      <p>
-        The delivery man picks up respective orders from store and delivers it
-        to people like you.
-      </p>
-    </li>
-  </ol>
-
-  <blockquote>
-    Notice that during all these steps, all you have done is just requesting
-    which item you want. Everything else is within its eco system and each
-    member has specific job to do.
-  </blockquote>
-</section>
-
-<section>
   <h2>The Redux Way</h2>
 
+  <div>
+    <h3>Decentralized State</h3>
+    <p>
+      Modern web applications are represented as a complex tree of components
+      that constantely produce and share data, called:
+      <strong>state</strong>.
+      <br />
+      When state is decentralized it can become difficult to understand and
+      manage.
+      <br />
+      <img
+        src="/assets/components-tree.png"
+        alt="Components tree"
+        class="my-4"
+      />
+    </p>
+  </div>
+
+  <div>
+    <h3>Single Global State: The Store</h3>
+    <p>
+      Redux introduces a global state - called <strong>store</strong> - for all
+      the data. It relies on a single immutable object to store all of the
+      application data - like a client-side database.
+      <br />
+      The store is the
+      <strong>single source of truth</strong> for all the data in your
+      application
+      <img src="/assets/redux-pattern.png" alt="Components tree" class="my-4" />
+    </p>
+  </div>
+</section>
+<section>
+  <h2>NgRx Implementation</h2>
   <img
     src="https://ngrx.io/generated/images/guide/store/state-management-lifecycle.png"
     alt="NgRx Life Cycle"
@@ -170,53 +158,51 @@
       updates the state.
     </p>
   </div>
+</section>
 
-  <!-- <div>
-      <h3>Components</h3>
-      <p>
-        Components are responsible for <strong>rendering</strong> the state.
-      </p>
-      <p>
-        Components are <strong>subscribed</strong> to the store and
-        <strong>select</strong> slices of the state.
-      </p>
-      <p>
-        Components are <strong>dispatching actions</strong> to the store, which
-        then updates the state.
-      </p>
-    </div>
-    <div>
-      <h3>Services</h3>
-      <p>
-        Services are responsible for <strong>fetching</strong> data from the
-        server.
-      </p>
-      <p>
-        Services are <strong>dispatching actions</strong> to the store, which
-        then updates the state.
-      </p>
-    </div> -->
 
-  <!-- <div>
-      <h3>State</h3>
-      <p>The state is responsible for <strong>holding</strong> the data.</p>
-      <p>
-        The state is <strong>immutable</strong> and <strong>read-only</strong>.
+<section>
+  <h2>Real Life Analogy</h2>
+
+  <div class="content">
+    <img
+      src="assets/5ztp5hs0bcz7hw753ugh.png"
+      alt="Simple real life example"
+      class="inline-block center"
+    />
+  </div>
+
+  <ol>
+    <li>
+      <h4>Step 1</h4>
+      <p class="text-xl">
+        At the convenience of home, people can order food by calling restaurant
+        workers.
       </p>
-      <p>
-        The state is <strong>updated</strong> by
-        <strong>dispatching actions</strong> to the store, which then updates
-        the state.
+    </li>
+    <li>
+      <h4>Step 2</h4>
+      <p class="text-xl">
+        Restaurant workers notes down your order and then hands it off to chef.
+        They also get groceries if needed for the order.
       </p>
-    </div> -->
-  <!-- <div>
-      <h3>Actions</h3>
+    </li>
+    <li>
+      <h4>Step 3</h4>
+      <p>Chef cooks the orders and places them in the store display.</p>
+    </li>
+    <li>
+      <h4>Step 4</h4>
       <p>
-        Actions are responsible for <strong>describing</strong> what happened.
+        The delivery man picks up respective orders from store and delivers it
+        to people like you.
       </p>
-      <p>
-        Actions are <strong>dispatched</strong> to the store, which then updates
-        the state.
-      </p>
-    </div> -->
+    </li>
+  </ol>
+
+  <blockquote>
+    Notice that during all these steps, all you have done is just requesting
+    which item you want. Everything else is within its eco system and each
+    member has specific job to do.
+  </blockquote>
 </section>

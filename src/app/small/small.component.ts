@@ -66,4 +66,8 @@ export class SmallComponent {
   removeMovie(movieId: string) {
     this.favoriteMovies$.next(this.favoriteMovies$.value.filter((m) => m.imdbID !== movieId));
   }
+
+  updateMovie(movie: IMovie) {
+    this.favoriteMovies$.next(this.favoriteMovies$.value.map((m) => m.imdbID === movie.imdbID ? movie : m));
+  }
 }
