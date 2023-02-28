@@ -1,22 +1,12 @@
 <ng-container *ngIf="movie$ | async as movie">
   <app-deflist [movie]="movie">
-    <ng-container *ngIf="isFavorite$ | async; else notSelected">
-      <app-button
-        color="danger"
-        (click)="removeFromFavorites(movie.imdbID)"
-      >
-        <app-icon name="heroMinusCircle"></app-icon>
-        <span>Delete Movie</span>
-      </app-button>
-    </ng-container>
-    <ng-template #notSelected>
-      <app-button
-        color="primary"
-        (click)="addToFavorites(movie)"
-      >
-        <app-icon name="heroPlusCircle"></app-icon>
-        <span>Add Movie</span>
-      </app-button>
-    </ng-template>
+    <app-button
+      [color]="!!(isFavorite$ | async) ? 'disabled' : 'primary'"
+      [disabled]="!!(isFavorite$ | async) ? true : false"
+      (onClick)="addToFavorites(movie)"
+    >
+      <app-icon name="heroPlusCircle"></app-icon>
+      <span>Add Movie </span>
+    </app-button>
   </app-deflist>
 </ng-container>
